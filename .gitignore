@@ -25,3 +25,22 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+# CONFIG FILES
+/config/config_global.php
+/config/config_ucenter.php
+/uc_server/data/config.inc.php
+
+# CACHE FILES
+data/*
+#data/cache/*
+#data/log/*
+#data/template/*
+#data/diy/*
+#data/sysdata/*
+#data/sendmail.lock
+#data/updatetime.lock
+
+/uc_server/data/cache/*
+/uc_server/data/view/*
+
