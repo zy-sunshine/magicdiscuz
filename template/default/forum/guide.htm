@@ -39,7 +39,7 @@
 				<!--{if helper_access::check_module('guide')}-->
 				<span class="pgb y"><a href="forum.php?mod=guide">{lang guide_index}</a></span>
 				<!--{/if}-->
-				<a onclick="showWindow('nav', this.href, 'get', 0)" href="forum.php?mod=misc&amp;action=nav"><img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" /></a>
+				<a onclick="showWindow('nav', this.href, 'get', 0)" href="forum.php?mod=misc&amp;action=nav"><img src="{IMGDIR}/newtopic.gif" alt="{lang send_posts}" /></a>
 			</div>
 			<!--{/if}-->
 			<ul id="thread_types" class="ttp bm cl">
@@ -73,7 +73,7 @@
 							 			<!--{if $key == 'hot'}--><span class="xi1">$thread['heats']{lang guide_attend}</span><!--{/if}-->
 							 			<!--{if $key == 'new'}-->$thread['lastpost']<!--{/if}-->
 						 			</em>
-						 			
+
 						 			<i>&middot; <a href="forum.php?mod=viewthread&tid=$thread[tid]&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra"$thread[highlight] target="_blank">$thread[subject]</a></i>&nbsp;<span class="xg1"><a href="forum.php?mod=forumdisplay&fid=$thread[fid]" target="_blank">$list['forumnames'][$thread[fid]]['name']</a></span>
 					 			</li>
 					 			<!--{/loop}-->

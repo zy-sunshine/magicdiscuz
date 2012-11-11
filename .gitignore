@@ -44,3 +44,5 @@ data/*
 /uc_server/data/cache/*
 /uc_server/data/view/*
 
+bak
+

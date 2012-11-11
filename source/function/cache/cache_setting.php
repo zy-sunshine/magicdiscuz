@@ -903,7 +903,7 @@ function get_cachedata_mynavs() {
 		}
 		$nav['code'] = '<a href="'.$nav['url'].'"'.($nav['title'] ? ' title="'.$nav['title'].'"' : '').($nav['target'] == 1 ? ' target="_blank"' : '').$nav['icon'].'>'.$nav['name'].'</a>';
 		$id = $nav['type'] == 0 ? $nav['identifier'] : 100 + $nav['id'];
-		$data['mynavs'][$id] = array('available' => $nav['available'], 'navname' => $nav['name'], 'code' => $nav['code'], 'level' => $nav['level']);
+		$data['mynavs'][$id] = array('available' => $nav['available'], 'navname' => $nav['name'], 'code' => $nav['code'], 'level' => $nav['level'], 'url' => $nav['url']);
 	}
 	return $data['mynavs'];
 }

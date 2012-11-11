@@ -467,8 +467,25 @@ function checktplrefresh($maintpl, $subtpl, $timecompare, $templateid, $cachefil
 		$tplrefresh = getglobal('config/output/tplrefresh');
 		$timestamp = getglobal('timestamp');
 	}
+	global $_G;
+	if($_G['config']['debug_ui']){
+		require_once DISCUZ_ROOT.'/source/function/function_cache.php';
+		updatecache(array("styles", "smilies_js"));
 
-	if(empty($timecompare) || $tplrefresh == 1 || ($tplrefresh > 1 && !($timestamp % $tplrefresh))) {
+		require_once DISCUZ_ROOT.'/source/class/class_template.php';
+		$template = new template();
+		$template->parse_template($maintpl, $templateid, $tpldir, $file, $cachefile);
+		if($targettplname === null) {
+			$targettplname = getglobal('style/tplfile');
+			if(!empty($targettplname)) {
+				include_once libfile('function/block');
+				$targettplname = strtr($targettplname, ':', '_');
+				update_template_block($targettplname, getglobal('style/tpldirectory'), $template->blocks);
+			}
+			$targettplname = true;
+		}
+		return TRUE;
+	}elseif(empty($timecompare) || $tplrefresh == 1 || ($tplrefresh > 1 && !($timestamp % $tplrefresh))) {
 		if(empty($timecompare) || @filemtime(DISCUZ_ROOT.$subtpl) > $timecompare) {
 			require_once DISCUZ_ROOT.'/source/class/class_template.php';
 			$template = new template();

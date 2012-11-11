@@ -82,7 +82,7 @@ class Cloud_Service_DiscuzTips {
 			</script>
 			<script src="http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js?v=1" type="text/javascript" charset="UTF-8"></script>
 EOF;
-		echo $jsCode;
+		//echo $jsCode;
 	}
 
 }
